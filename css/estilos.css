@@ -42,3 +42,10 @@ a:hover{
      padding:0;
      list-style:none;
  }
+nav{
+ 	position: sticky;
+ 	top:0px;
+ 	background-color: white;
+ 	padding-top: 10px;
+ 	padding-bottom: 10px;
+ }

@@ -31,12 +31,12 @@ a:hover{
 	opacity: 0.9;
 
 }
-ul{ 
+.menu{ 
      width:100%; /* ancho del contenedor */
      margin:0 auto;
      overflow:hidden;
  }
- li{
+ #menu{
      width:20%; /* ancho de cada elmento del menu */
      float:left;  
      text-align:center;

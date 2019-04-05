@@ -1,6 +1,6 @@
 create table profesores(
   id_profesor number(10) constraint profesores_pk primary key,
-  nombre varchar2(15) constraint profesores_nnl not null,
+  nombre varchar2(25) constraint profesores_nnl not null,
   apellido1 varchar2(25)constraint profesores_nn2 not null ,
   apellido2 varchar2(25) constraint profesores_nn3 not null
 );

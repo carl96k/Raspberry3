@@ -1,6 +1,9 @@
 /*Estilo de la cabecera y el menú*/
 *{
-	font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif; 
+	font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
+}
+body{
+	background-image: url(../imagenes/fondo.jpg);
 }
 
 #cabecera { 
@@ -45,7 +48,8 @@ a:hover{
 nav{
  	position: sticky;
  	top:0px;
- 	background-color: white;
+ 	background-color:transparent;
  	padding-top: 10px;
  	padding-bottom: 10px;
  }
+

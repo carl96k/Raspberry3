@@ -43,7 +43,7 @@ create table notas(
 
 create table aulas(
   cod_aula number(10) constraint aulas_pk primary key,
-  descripcion varchar2(20),
+  descripcion varchar2(60),
   cod_modulo number(10)
   constraint aulas_fk references modulos (cod_modulo)
 );

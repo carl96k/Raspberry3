@@ -26,15 +26,15 @@
 	<li><a href="costes.html">Costes</a></li>
 	</ul>
 	</nav>
-<h2 id="servidores">Instalacion del servidor apache y mysql</h2>
-<p>Para la instalacion del servidor apache en la raspberry tenemos que abrir un terminal y establecer una conexion ssh, elevar los permisos y realizar los siguientes pasos:</p>
+<h2 id="servidores">Instalación del servidor Apache y MySQL</h2>
+<p>Para la instalación del servidor Apache en la Raspberry tenemos que abrir un terminal y establecer una conexión ssh, elevar los permisos y realizar los siguientes pasos:</p>
 <ul>
 	<li>Hacemos un <strong>apt-get update</strong> para buscar actualizaciones de los paquetes disponibles</li>
 	<img src="imagenes/actualizando.PNG" alt="apt-get">
-	<li>Despues con el comando <strong>apt-get upgrade</strong> procedemos instalar todas las actualizaciones.</li>
+	<li>Después con el comando <strong>apt-get upgrade</strong> procedemos instalar todas las actualizaciones.</li>
 	<li>Cuando termine de actualizar (tarda un rato) instalaremos el servidor apache con el comando <strong>apt-get install apache2</strong></li>
 	<li>Ahora precisamos instalar un servidor de mysql con <strong>apt-get install mysql-server</strong></li> y el cliente <strong>apt-get install mysql-client</strong>
-	<li>Comprobamos la ultima version de php con el comando <strong>apt-cache search php7-*</strong></li>
+	<li>Comprobamos la última versión de php con el comando <strong>apt-cache search php7-*</strong></li>
 	<img id="small" src="imagenes/buscando version php.PNG" alt="buscando version php">
 	<li>Necesitamos instalar php, para ello lanzamos el comando <strong>apt-get install php7.0</strong></li>
 	<li>En este paso instalaremos php con mysql mediante <strong>apt-get install php7.0-mysql</strong></li>
@@ -44,7 +44,7 @@
 	<li>Nos situamos en el directorio <strong> cd /var/www/html/ ls</strong> y hacemos un listado de los archivos</li>
 	<li>Por defecto contiene un archivo html el cual hay que eliminar <strong>rm index.html</strong></li>
 	<img id="small" src="imagenes/borrando index de ejemplo.PNG" alt="Borrado ejemplo">
-	<li>Necesitamos crear un fichero php para ello utilizamos nano <strong>nano index.php</strong> con el contenido <strong>&lt;?php phpinfo(); ?&gt;</strong></li>
+	<li>Ahora creamos un fichero llamdo index.php ver que php funciona, para  ello utilizamos nano <strong>nano index.php</strong> con el contenido <strong>&lt;?php phpinfo(); ?&gt;</strong></li>
 	<img id="small" src="imagenes/prueba php.PNG" alt="prueba php">
 </ul>
 </nav>

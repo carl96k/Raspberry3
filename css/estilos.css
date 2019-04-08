@@ -89,6 +89,14 @@ img{
 	height:450px; 
 	width:500px;
 }
+#small{
+	display:block;
+	margin:auto;
+	border:1px solid black;
+	height:70px; 
+	width:300px;
+}
+
 
 @media screen and (max-width: 1000px){
 	body{

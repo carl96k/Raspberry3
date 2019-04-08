@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+<h1 id="cabecera">Instalación completa de un servidor multiservicio</h1>
+	<nav>
+	<ul class="menu">
+	<li id="menu"><a href="index.html">Instalación</a></li>
+	<li id="menu"><a href="servidores.html">Servidores</a></li>
+	<li id="menu"><a href="#cabecera">Home</a></li>
+	<li id="menu"><a href="sql.html">Base de datos</a></li>
+	<li id="menu"><a href="#coste">Coste</a></li>
+	</ul>
+	</nav>
+	</nav>
+	<nav id="lateral">
+	<ul class="lateral">
+	<li><a href="#index.html">Instalación</a></li>
+	<li><a href="servidores.html">Servidores</a></li>
+	<li><a href="#cabecera">Home</a></li>
+	<li><a href="sql.html">Base de datos</a></li>
+	<li><a href="#coste">Coste</a></li>
+	</ul>
+	</nav>
+<h2 id="sql">Base de datos</h2>
+<p>Para el diseño de la base de datos, en la cual hemos tenido que reflejar los modulos de ASIR, hemos tenidos que tener en cuanta los siguiente parametros</p>
+<ul>
+	<li>Nombre y Apellido de los profesor@s que han impartido modulos</li>
+	<li>Nombre de los modulos que imparten en 1º y en 2º</li>
+	<li>Horario de los modulos</li>
+	<li>Descripcion del aula y materiales de la misma</li>
+	<li>Se llevan tareas en los modulos que imparten los los profesores</li>
+	<li>Datos y notas obtenidas en las tareas de los alumnos</li>
+</ul>
+<p>Una vez conocidos los parametros a tener en cuanta pasaremos a diseñar el esquema entidad relacion. A simple vista podemos apreciar que tendremos las entidades <strong><em>profesores</em></strong>, <strong><em>modulos</em></strong>, <strong><em>alumnos</em></strong>, <strong><em>tareas</em></strong> que a su vez tendra una entidad debil <strong><em>notas</em></strong>, y por ultimo <strong><em>aulas</em></strong> cuya entidad debil sera <strong><em>materiales</em></strong>
+</p>
+<p>
+	Entre <strong><em>profesores</em></strong> y <strong><em>modulos</em></strong> tendremos una relacion (1,n) llamada <strong><em>impartir</em></strong>. <em><strong>Modulos</em></strong> se relaciona con <em><strong>Tareas</em></strong> a traves de una relacion (1,n) llamada <em><strong>realizar</em></strong>. A su vez <em><strong>modulos</em></strong> tambien se relaciona con <em><strong>aulas</em></strong> mediente una relacion (1,n) llamada <em><strong>tener</em></strong>. Y por ultimo, <em><strong>modulos</em></strong> tambien se relaciona con <strong><em>alumnos</em></strong> mediante otra relacion (1,n) llamada <em><strong>asistir</em></strong>.
+</p>
+	
+</body>
+</html>

@@ -41,7 +41,7 @@ insert into materiales VALUES (3,'Router',05,1);
 ------------------------------------------------------------------------
 create table horarios(
   cod_aula    number(3),
-  dia_semana  char,
+  dia_semana  char CONSTRAINT horarios_ck1 CHECK(dia_semana IN ('L','M','X','J','V')),
   hora_inicio time,
   hora_fin    time,
   cod_modulo number(10),
@@ -237,15 +237,65 @@ insert into matricular values (10,3);
 insert into matricular values (10,4);
 insert into matricular values (10,5);
 insert into matricular values (10,6);
+----
+insert into matricular values (11,7);
+insert into matricular values (11,8);
+insert into matricular values (11,9);
+insert into matricular values (11,10);
+insert into matricular values (11,12);
+insert into matricular values (12,7);
+insert into matricular values (12,8);
+insert into matricular values (12,9);
+insert into matricular values (12,10);
+insert into matricular values (12,11);
+insert into matricular values (12,12);
+insert into matricular values (13,7);
+insert into matricular values (13,8);
+insert into matricular values (13,9);
+insert into matricular values (13,10);
+insert into matricular values (13,11;
+insert into matricular values (13,12);
+insert into matricular values (14,7);
+insert into matricular values (14,8);
+insert into matricular values (14,9);
+insert into matricular values (14,10);
+insert into matricular values (14,11);
+insert into matricular values (14,12);
+insert into matricular values (15,7);
+insert into matricular values (15,8);
+insert into matricular values (15,9);
+insert into matricular values (15,10);
+insert into matricular values (15,12);
+insert into matricular values (16,8);
+insert into matricular values (16,9);
+insert into matricular values (16,10);
+insert into matricular values (16,11);
+insert into matricular values (16,12);
+insert into matricular values (16,6);
+insert into matricular values (17,7);
+insert into matricular values (17,8);
+insert into matricular values (17,9);
+insert into matricular values (17,10);
+insert into matricular values (17,11);
+insert into matricular values (17,12);
+insert into matricular values (18,7);
+insert into matricular values (18,8);
+insert into matricular values (18,9);
+insert into matricular values (18,10);
+insert into matricular values (18,11);
+insert into matricular values (18,12);
+insert into matricular values (18,1);
+insert into matricular values (18,2);
+
 
 
 ---------------------------------------------------------------
 create table modulos (
   cod_modulo number(10) constraint modulos_pk primary key,
-  nombre varchar2(40) constraint modulos_nnl not null,
-  id_curso number(4),
-  fecha_inicio timestamp,
-  id_profesor int(8),
+  nombre varchar2(40),
+  id_curso number(4) constraint modulos_nnl not null,
+  fecha_inicio timestamp constraint modulos_nnl not null,
+  id_profesor int(8) constraint modulos_nnl2 not null,
 
   constraint modulos_Fk2 foreign key (id_profesor) references profesores,
   constraint modulos_Fk3 foreign key (id_curso,fecha_inicio) references cursos

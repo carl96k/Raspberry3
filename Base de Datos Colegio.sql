@@ -156,7 +156,7 @@ create table alumnos(
 
 insert into alumnos (id_alumno, nombre, apellido1, apellido2, curso_escolar)
                     values (1,'Carlos','Arconada','Garcia','1º');
-insert into alumnos values(2,'David','Franco','Laguerza','1º');
+insert into alumnos values(2,'David','Franco','Laghezza','1º');
 insert into alumnos values(3,'Sonia','Rivero','Pacheco','1º');
 insert into alumnos values(4,'David','Martin','Ruiz','1º');
 insert into alumnos values(5,'Pedro','Marin','Pamplet','1º');

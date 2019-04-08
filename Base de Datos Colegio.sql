@@ -1,5 +1,5 @@
 create table aulas(
-  cod_aula number(3) constraint aulas_pk primary key,
+  cod_aula number(11) constraint aulas_pk primary key,
   descripcion varchar2(50)
 );
 
@@ -14,7 +14,7 @@ insert into aulas values (05,'Informatica General');
 create table materiales(
   cod_material number(10),
   nombre varchar2(20),
-  cod_aula number(10),
+  cod_aula number(11),
   cantidad number (3),
   constraint materiales_Pk PRIMARY KEY (cod_material,cod_aula),
   constraint materiales_Fk foreign key (cod_aula) references aulas
@@ -40,7 +40,7 @@ insert into materiales VALUES (3,'Router',05,1);
 
 ------------------------------------------------------------------------
 create table horarios(
-  cod_aula    number(3),
+  cod_aula    number(11),
   dia_semana  char CONSTRAINT horarios_ck1 CHECK(dia_semana IN ('L','M','X','J','V')),
   hora_inicio time,
   hora_fin    time,

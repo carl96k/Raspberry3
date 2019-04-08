@@ -12,7 +12,7 @@ insert into aulas values (05,'Informatica General');
 
 -----------------------------------------------------------------
 create table materiales(
-  cod_material number(10),
+  cod_material number(11),
   nombre varchar2(20),
   cod_aula number(11),
   cantidad number (3),
@@ -44,7 +44,7 @@ create table horarios(
   dia_semana  char CONSTRAINT horarios_ck1 CHECK(dia_semana IN ('L','M','X','J','V')),
   hora_inicio time,
   hora_fin    time,
-  cod_modulo number(10),
+  cod_modulo number(11),
 
  constraint horarios_Pk primary key (cod_aula,dia_semana,hora_inicio,cod_modulo),
  constraint horarios_Fk foreign key (cod_aula) references aulas,
@@ -147,7 +147,7 @@ insert into profesores values (5,'Jose Ignacio','Garcia','Allende');
 
 ------------------------------------------------------------------
 create table alumnos(
-  id_alumno number(10) constraint alumnos_pk primary key,
+  id_alumno number(11) constraint alumnos_pk primary key,
   nombre varchar2(15),
   apellido1 varchar2(25),
   apellido2 varchar2(25),
@@ -176,8 +176,8 @@ insert into alumnos values(18,'Pepe','Torres','Gil','2º');
 
 ----------------------------------------------------------------
 create table matricular(
-  id_alumno number(10),
-  cod_modulo number(10,
+  id_alumno number(11),
+  cod_modulo number(11),
 
 constraint matricular_Pk primary key (id_alumno,cod_modulo),
 constraint matricular_Fk foreign key (id_alumno) references alumnos,
@@ -291,11 +291,11 @@ insert into matricular values (18,2);
 
 ---------------------------------------------------------------
 create table modulos (
-  cod_modulo number(10) constraint modulos_pk primary key,
+  cod_modulo number(11) constraint modulos_pk primary key,
   nombre varchar2(40),
-  id_curso number(4) constraint modulos_nnl not null,
+  id_curso number(11) constraint modulos_nnl not null,
   fecha_inicio timestamp constraint modulos_nnl not null,
-  id_profesor int(8) constraint modulos_nnl2 not null,
+  id_profesor int(11) constraint modulos_nnl2 not null,
 
   constraint modulos_Fk2 foreign key (id_profesor) references profesores,
   constraint modulos_Fk3 foreign key (id_curso,fecha_inicio) references cursos
@@ -319,8 +319,8 @@ insert into modulos values(12,'Seguridad y Alta disponibilidad',2,to_date('15/09
 
 ---------------------------------------------------------------
 create table tareas (
-  cod_modulo number(10),
-  cod_tarea number(10,6),
+  cod_modulo number(11),
+  cod_tarea number(11),
   titulo varchar2(40),
   descripcion varchar2(60),
 
@@ -343,9 +343,9 @@ insert into tareas values(3,1.3,'Pantalla LCD','Consigue sacar por pantalla los 
 -----------------------------------------------------
 
 create table notas(
-  id_alumno number(10),
-  cod_tarea number(10),
-  cod_modulo number(10),
+  id_alumno number(11),
+  cod_tarea number(11),
+  cod_modulo number(11),
   nota number(2,1),
   constraint notas_pk primary key (id_alumno,cod_tarea,cod_modulo),
   constraint notas_fk1 foreign key (id_alumno) references alumnos,

@@ -41,8 +41,8 @@ h2{
 @media all and (max-width:900px){
 
 	body{
-		margin-left:10px;
-		margin-right:10px;
+		margin-left:1em;
+		margin-right:1em;
 	}
     img{
         height:250px; 

@@ -450,3 +450,28 @@ select * from horarios where id_curso=1;
 --2
 select * from horarios where id_curso=2;
 --3
+select T.titulo,T.descripcion,A.nombre,A.apellido1,A.apellido2,N.nota
+from tareas T,alumnos A, notas N
+where T.cod_tarea=N.cod_tarea and N.id_alumno=A.id_alumno;
+--4
+select A.nombre,A.apellido1,A.apellido2,avg(nota) as Media,count(*) as Tareas
+from alumnos A, tareas T, notas N
+where A.id_alumno=N.id_alumno and T.cod_tarea=N.cod_tarea
+group by  A.nombre,A.apellido1,A.apellido2;
+ 
+--Creamos las vistas:
+--1
+create view horario_1 as select * from horarios where id_curso=1;
+--2
+create view horario_2 as select * from horarios where id_curso=2;
+--3
+create view tareas_notas as
+select T.titulo,T.descripcion,A.nombre,A.apellido1,A.apellido2,N.nota
+from tareas T,alumnos A, notas N
+where T.cod_tarea=N.cod_tarea and N.id_alumno=A.id_alumno;
+--4
+create view media_notas as 
+select A.nombre,A.apellido1,A.apellido2,avg(nota) as Media,count(*) as Tareas
+from alumnos A, tareas T, notas N
+where A.id_alumno=N.id_alumno and T.cod_tarea=N.cod_tarea
+group by  A.nombre,A.apellido1,A.apellido2;     

@@ -8,21 +8,41 @@
 </head>
 <body>
 <h2>Base de datos</h2>
-<p>Para el diseño de la base de datos, en la cual hemos tenido que reflejar los modulos de ASIR, hemos tenidos que tener en cuanta los siguiente parametros</p>
+<p>Para el diseño de la base de datos, en la cual hemos tenido que reflejar los módulos de ASIR, hemos tenidos que tener en cuanta los siguiente parámetros</p>
 <ul>
-	<li>Nombre y Apellido de los profesor@s que han impartido modulos</li>
-	<li>Nombre de los modulos que imparten en 1º y en 2º</li>
-	<li>Horario de los modulos</li>
-	<li>Descripcion del aula y materiales de la misma</li>
-	<li>Se llevan tareas en los modulos que imparten los los profesores</li>
+	<li>Nombre y Apellido de los profesor@s que han impartido módulos</li>
+	<li>Nombre de los módulos que imparten en 1º y en 2º</li>
+	<li>Horario de los módulos</li>
+	<li>Descripción del aula y materiales de la misma</li>
+	<li>Se llevan tareas en los módulos que imparten los los profesores</li>
 	<li>Datos y notas obtenidas en las tareas de los alumnos</li>
 </ul>
-<p>Una vez conocidos los parametros a tener en cuanta pasaremos a diseñar el esquema entidad relacion. A simple vista podemos apreciar que tendremos las entidades <strong><em>profesores</em></strong>, <strong><em>modulos</em></strong>, <strong><em>alumnos</em></strong>, <strong><em>cursos</em></strong> y <strong><em>aulas</em></strong>, con sus correspondientes debiles.
+<p>Una vez conocidos los parámetros a tener en cuanta pasaremos a diseñar el esquema entidad-relación. A simple vista podemos apreciar que tendremos las entidades <strong><em>profesores</em></strong>, <strong><em>módulos</em></strong>, <strong><em>alumnos</em></strong>, <strong><em>cursos</em></strong> y <strong><em>aulas</em></strong>, con sus correspondientes debiles.
 </p>
-<img src="img/ESQ Entidad-Relacion.PNG" alt="Entidad-Relacion">
+<img src="img/modeloer.PNG" alt="Entidad-Relación">
 <p>
-	Como se aprecia, se cubren todos los aspectos propuestos a la hora de diseñar el esquema entidad relacion. Pasado su revision, precedemos a pasarlo a modelo relacional para su posterior implementacion y creacion de la base de datos.  
+	Como se aprecia, se cubren todos los aspectos propuestos a la hora de diseñar el esquema entidad-relación. Pasado su revisión, precedemos a pasarlo a modelo relacional para su posterior implementación y creación de la base de datos.  
 </p>
-<img src="img/ESQ Relacional.PNG" alt="Esquema relacional">
+<img src="img/relacional.PNG" alt="Esquema relacional">
+<p>Ahora pasamos a crear la base de datos llamada <strong><i>raspberry3:</i></strong><br>Lo hacemos con el comando <i>create database</i></p>
+<img src="img/creando database.PNG" alt="create database" id="small">
+<p>Para crear un usuario en MySQL que tenga la capacidad de manipular sólo la base de datos <i>raspberry3</i> ejecutamos la siguiente instrucción:</p>
+<ul>
+	<li>CREATE USER 'grupo3' IDENTIFIED BY 'grupo3'; --creamos el usuario llamado grupo3 con la contraseña grupo3</li>
+	<li>GRANT ALL PRIVILEGES ON raspberry3.* to grupo3@localhost; --le damos privilegios sólo para manipular esa base de datos</li>
+	<li>FLUSH PRIVILEGES; --refresacamos los privilegios</li>
+</ul>
+<p>Hacemos un <i>select</i> a la tabla user de mysql para comprobar que se ha creado correctamente</p>
+<img src="img/select.PNG" alt="select" id="small">
+<p>Para crear las tablas, columnas y meter los datos, se hace igual que en Oracle, solo que las restricciones (constraint) se ponen al final, veamos un ejemplo:</p>
+<img src="img/modulos.PNG" alt="tabla de módulos">
+<p>Para visualizar las tablas que vamos creando ejecutamos <i>show tables;</i> y si queremos ver las columnas de una tabla ejecutamos <i>describe</i> seguido del nombre de la tabla</p>
+<p>Para crear vistas de las consultas que vamos haciendo lo hacemos con <i>CREATE VIEW nombre_vista AS [INSTRCUCCIÓN SELECT]</i></p>
+<p>Si volvemos a ejecutar <i>show tables;</i> vemos cómo la vista ahora sale como una tabla más, y por último, para ver el contemido de la vista ejecutamos <i>SELECT * from nombre_vista</i></p>
+<img src="img/showtables.PNG" alt="show tables">
+<p><a href="https://github.com/carl96k/Raspberry3/tree/documents" target=”_blank”>
+Para más información sobre las consultas, vistas o creación de tablas o columnas, visite nuestro repositorio</a></p>
+<p>Por último, para comprobar que sólo se puede acceder a base de datos desde el servidor, ejecutamos el comando <i>nmap 192.168.50.66 -p3306</i>, con el parámetro -p le estamos diciendo que nos de información sólo del puerto 3306 que es el puerto donde corre mysql:</p>
+<img src="img/3306.PNG" alt="puerto mysql" id="small">
 </body>
 </html>

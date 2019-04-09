@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css?family=Titillium+Web:300,600');
+:root{
+    --cDominante:#60c5ad;
+    --cDominanteHover: #2bbf6e;
+    --cLetraDominante:white;
+    --tLetraDominante:"Titillium Web",sans-serif;
+    --tAnchoNormal:300;
+    --tAnchoGrueso:600;
+}
+
+body{
+    background-color: var(--cDominante);
+    font-family:var(--tLetraDominante) ;
+    font-weight: var(--tAnchoNormal);
+    color:var(--cLetraDominante);
+}
+img{
+	display:block;
+	margin:auto;
+	border:1px solid black;
+	height:450px; 
+	width:500px;
+}
+
+#small{
+	display:block;
+	margin:auto;
+	border:1px solid black;
+	height:70px; 
+	width:300px;
+}

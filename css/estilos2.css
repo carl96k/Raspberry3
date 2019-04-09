@@ -15,8 +15,8 @@ body{
     color:var(--cLetraDominante);
     background-image: url('../img/fondo1.jpg');
     background-repeat: repeat;
-    margin-left: 15em;
-    margin-right: 15em
+    margin-left: 200px;
+    margin-right: 200px;
 
 }
 img{
@@ -41,8 +41,8 @@ h2{
 @media all and (max-width:900px){
 
 	body{
-		margin-left:1em;
-		margin-right:1em;
+		margin-left:10px;
+		margin-right:10px;
 	}
     img{
         height:250px; 

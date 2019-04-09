@@ -119,12 +119,12 @@ insert into horarios VALUES(02,'V','13:20','14:15',9,2);
 
 ------------------------------------------------------------------
 create table cursos (
-  cod_curso     number(11),
+  id_curso     number(11),
   fecha_inicio timestamp,
   fecha_fin    timestamp,
   constraint cursos_Pk primary key (cod_curso,fecha_inicio)
 );
-insert into cursos (cod_curso,fecha_inicio,fecha_fin)
+insert into cursos (id_curso,fecha_inicio,fecha_fin)
                   values (1,TO_DATE('15/09/2018','dd/mm/yyyy'),TO_DATE('23/06/2019'));
 insert into cursos values (2,TO_DATE('15/09/2018'),TO_DATE('23/06/2019');
 
@@ -178,115 +178,115 @@ insert into alumnos values(18,'Pepe','Torres','Gil');
 create table matricular(
   id_alumno number(11),
   cod_modulo number(11),
-  cod_curso number(11),
+  id_curso number(11),
 
-constraint matricular_Pk primary key (id_alumno,cod_modulo,cod_curso),
+constraint matricular_Pk primary key (id_alumno,cod_modulo,id_curso),
 constraint matricular_Fk foreign key (id_alumno) references alumnos,
-constraint matricular_Fk2 foreign key (cod_modulo,cod_curso) references modulos
+constraint matricular_Fk2 foreign key (cod_modulo,id_curso) references modulos
 ;
 
-insert into matricular (id_alumno,cod_modulo)
-                       values(1,1);
-insert into matricular (id_alumno,cod_modulo) values (1,2);
-insert into matricular (id_alumno,cod_modulo) values (1,3);
-insert into matricular (id_alumno,cod_modulo) values (1,4);
-insert into matricular (id_alumno,cod_modulo) values (1,5);
-insert into matricular (id_alumno,cod_modulo) values (1,6);
-insert into matricular (id_alumno,cod_modulo) values (2,1);
-insert into matricular (id_alumno,cod_modulo) values (2,2);
-insert into matricular (id_alumno,cod_modulo) values (2,3);
-insert into matricular (id_alumno,cod_modulo) values (2,4);
-insert into matricular (id_alumno,cod_modulo) values (2,5);
-insert into matricular (id_alumno,cod_modulo) values (2,6);
-insert into matricular (id_alumno,cod_modulo) values (3,1);
-insert into matricular (id_alumno,cod_modulo) values (3,2);
-insert into matricular (id_alumno,cod_modulo) values (3,3);
-insert into matricular (id_alumno,cod_modulo) values (3,4);
-insert into matricular (id_alumno,cod_modulo) values (3,5);
-insert into matricular (id_alumno,cod_modulo) values (3,6);
-insert into matricular (id_alumno,cod_modulo) values (4,1);
-insert into matricular (id_alumno,cod_modulo) values (4,2);
-insert into matricular (id_alumno,cod_modulo) values (4,3);
-insert into matricular (id_alumno,cod_modulo) values (4,4);
-insert into matricular (id_alumno,cod_modulo) values (4,5);
-insert into matricular (id_alumno,cod_modulo) values (4,6);
-insert into matricular (id_alumno,cod_modulo) values (5,1);
-insert into matricular (id_alumno,cod_modulo) values (5,3);
-insert into matricular (id_alumno,cod_modulo) values (5,4);
-insert into matricular (id_alumno,cod_modulo) values (5,5);
-insert into matricular (id_alumno,cod_modulo) values (5,6);
-insert into matricular (id_alumno,cod_modulo) values (6,1);
-insert into matricular (id_alumno,cod_modulo) values (6,2);
-insert into matricular (id_alumno,cod_modulo) values (6,3);
-insert into matricular (id_alumno,cod_modulo) values (6,4);
-insert into matricular (id_alumno,cod_modulo) values (6,5);
-insert into matricular (id_alumno,cod_modulo) values (6,6);
-insert into matricular (id_alumno,cod_modulo) values (7,1);
-insert into matricular (id_alumno,cod_modulo) values (7,2);
-insert into matricular (id_alumno,cod_modulo) values (7,3);
-insert into matricular (id_alumno,cod_modulo) values (7,4);
-insert into matricular (id_alumno,cod_modulo) values (7,5);
-insert into matricular (id_alumno,cod_modulo) values (7,6);
-insert into matricular (id_alumno,cod_modulo) values (8,1);
-insert into matricular (id_alumno,cod_modulo) values (8,3);
-insert into matricular (id_alumno,cod_modulo) values (8,4);
-insert into matricular (id_alumno,cod_modulo) values (9,5);
-insert into matricular (id_alumno,cod_modulo) values (9,6);
-insert into matricular (id_alumno,cod_modulo) values (9,1);
-insert into matricular (id_alumno,cod_modulo) values (10,2);
-insert into matricular (id_alumno,cod_modulo) values (10,3);
-insert into matricular (id_alumno,cod_modulo) values (10,4);
-insert into matricular (id_alumno,cod_modulo) values (10,5);
-insert into matricular (id_alumno,cod_modulo) values (10,6);
+insert into matricular (id_alumno,cod_modulo,id_curso)
+                       values(1,1,1);
+insert into matricular values (1,2,1);
+insert into matricular values (1,3,1);
+insert into matricular values (1,4,1);
+insert into matricular values (1,5,1);
+insert into matricular values (1,6,1);
+insert into matricular values (2,1,1);
+insert into matricular values (2,2,1);
+insert into matricular values (2,3,1);
+insert into matricular values (2,4,1);
+insert into matricular values (2,5,1);
+insert into matricular values (2,6,1);
+insert into matricular values (3,1,1);
+insert into matricular values (3,2,1);
+insert into matricular values (3,3,1);
+insert into matricular values (3,4,1);
+insert into matricular values (3,5,1);
+insert into matricular values (3,6,1);
+insert into matricular values (4,1,1);
+insert into matricular values (4,2,1);
+insert into matricular values (4,3,1);
+insert into matricular values (4,4,1);
+insert into matricular values (4,5,1);
+insert into matricular values (4,6,1);
+insert into matricular values (5,1,1);
+insert into matricular values (5,3,1);
+insert into matricular values (5,4,1);
+insert into matricular values (5,5,1);
+insert into matricular values (5,6,1);
+insert into matricular values (6,1,1);
+insert into matricular values (6,2,1);
+insert into matricular values (6,3,1);
+insert into matricular values (6,4,1);
+insert into matricular values (6,5,1);
+insert into matricular values (6,6,1);
+insert into matricular values (7,1,1);
+insert into matricular values (7,2,1);
+insert into matricular values (7,3,1);
+insert into matricular values (7,4,1);
+insert into matricular values (7,5,1);
+insert into matricular values (7,6,1);
+insert into matricular values (8,1,1);
+insert into matricular values (8,3,1);
+insert into matricular values (8,4,1);
+insert into matricular values (9,5,1);
+insert into matricular values (9,6,1);
+insert into matricular values (9,1,1);
+insert into matricular values (10,2,1);
+insert into matricular values (10,3,1);
+insert into matricular values (10,4,1);
+insert into matricular values (10,5,1);
+insert into matricular values (10,6,1);
 ----
-insert into matricular (id_alumno,cod_modulo) values (11,7);
-insert into matricular (id_alumno,cod_modulo) values (11,8);
-insert into matricular (id_alumno,cod_modulo) values (11,9);
-insert into matricular (id_alumno,cod_modulo) values (11,10);
-insert into matricular (id_alumno,cod_modulo) values (11,12);
-insert into matricular (id_alumno,cod_modulo) values (12,7);
-insert into matricular (id_alumno,cod_modulo) values (12,8);
-insert into matricular (id_alumno,cod_modulo) values (12,9);
-insert into matricular (id_alumno,cod_modulo) values (12,10);
-insert into matricular (id_alumno,cod_modulo) values (12,11);
-insert into matricular (id_alumno,cod_modulo) values (12,12);
-insert into matricular (id_alumno,cod_modulo) values (13,7);
-insert into matricular (id_alumno,cod_modulo) values (13,8);
-insert into matricular (id_alumno,cod_modulo) values (13,9);
-insert into matricular (id_alumno,cod_modulo) values (13,10);
-insert into matricular (id_alumno,cod_modulo) values (13,11;
-insert into matricular (id_alumno,cod_modulo) values (13,12);
-insert into matricular (id_alumno,cod_modulo) values (14,7);
-insert into matricular (id_alumno,cod_modulo) values (14,8);
-insert into matricular (id_alumno,cod_modulo) values (14,9);
-insert into matricular (id_alumno,cod_modulo) values (14,10);
-insert into matricular (id_alumno,cod_modulo) values (14,11);
-insert into matricular (id_alumno,cod_modulo) values (14,12);
-insert into matricular (id_alumno,cod_modulo) values (15,7);
-insert into matricular (id_alumno,cod_modulo) values (15,8);
-insert into matricular (id_alumno,cod_modulo) values (15,9);
-insert into matricular (id_alumno,cod_modulo) values (15,10);
-insert into matricular (id_alumno,cod_modulo) values (15,12);
-insert into matricular (id_alumno,cod_modulo) values (16,8);
-insert into matricular (id_alumno,cod_modulo) values (16,9);
-insert into matricular (id_alumno,cod_modulo) values (16,10);
-insert into matricular (id_alumno,cod_modulo) values (16,11);
-insert into matricular (id_alumno,cod_modulo) values (16,12);
-insert into matricular (id_alumno,cod_modulo) values (16,6);
-insert into matricular (id_alumno,cod_modulo) values (17,7);
-insert into matricular (id_alumno,cod_modulo) values (17,8);
-insert into matricular (id_alumno,cod_modulo) values (17,9);
-insert into matricular (id_alumno,cod_modulo) values (17,10);
-insert into matricular (id_alumno,cod_modulo) values (17,11);
-insert into matricular (id_alumno,cod_modulo) values (17,12);
-insert into matricular (id_alumno,cod_modulo) values (18,7);
-insert into matricular (id_alumno,cod_modulo) values (18,8);
-insert into matricular (id_alumno,cod_modulo) values (18,9);
-insert into matricular (id_alumno,cod_modulo) values (18,10);
-insert into matricular (id_alumno,cod_modulo) values (18,11);
-insert into matricular (id_alumno,cod_modulo) values (18,12);
-insert into matricular (id_alumno,cod_modulo) values (18,1);
-insert into matricular (id_alumno,cod_modulo) values (18,2);
+insert into matricular values (11,7,2);
+insert into matricular values (11,8,2);
+insert into matricular values (11,9,2);
+insert into matricular values (11,10,2);
+insert into matricular values (11,12,2);
+insert into matricular values (12,7,2);
+insert into matricular values (12,8,2);
+insert into matricular values (12,9,2);
+insert into matricular values (12,10,2);
+insert into matricular values (12,11,2);
+insert into matricular values (12,12,2);
+insert into matricular values (13,7,2);
+insert into matricular values (13,8,2);
+insert into matricular values (13,9,2);
+insert into matricular values (13,10,2);
+insert into matricular values (13,11,2;
+insert into matricular values (13,12,2);
+insert into matricular values (14,7,2);
+insert into matricular values (14,8,2);
+insert into matricular values (14,9,2);
+insert into matricular values (14,10,2);
+insert into matricular values (14,11,2);
+insert into matricular values (14,12,2);
+insert into matricular values (15,7,2);
+insert into matricular values (15,8,2);
+insert into matricular values (15,9,2);
+insert into matricular values (15,10,2);
+insert into matricular values (15,12,2);
+insert into matricular values (16,8,2);
+insert into matricular values (16,9,2);
+insert into matricular values (16,10,2);
+insert into matricular values (16,11,2);
+insert into matricular values (16,12,2);
+insert into matricular values (16,6,2);
+insert into matricular values (17,7,2);
+insert into matricular values (17,8,2);
+insert into matricular values (17,9,2);
+insert into matricular values (17,10,2);
+insert into matricular values (17,11,2);
+insert into matricular values (17,12,2);
+insert into matricular values (18,7,2);
+insert into matricular values (18,8,2);
+insert into matricular values (18,9,2);
+insert into matricular values (18,10,2);
+insert into matricular values (18,11,2);
+insert into matricular values (18,12,2);
+insert into matricular values (18,1,2);
+insert into matricular values (18,2,2);
 
 
 
@@ -294,15 +294,15 @@ insert into matricular (id_alumno,cod_modulo) values (18,2);
 create table modulos (
   cod_modulo number(11) constraint modulos_pk primary key,
   nombre varchar2(40),
-  cod_curso number(11) constraint modulos_nnl not null,
+  id_curso number(11) constraint modulos_nnl not null,
   fecha_inicio timestamp constraint modulos_nnl not null,
   id_profesor int(11) constraint modulos_nnl2 not null,
 
   constraint modulos_Fk2 foreign key (id_profesor) references profesores,
-  constraint modulos_Fk3 foreign key (cod_curso,fecha_inicio) references cursos
+  constraint modulos_Fk3 foreign key (id_curso,fecha_inicio) references cursos
 );
 
-insert into modulos (cod_modulo,nombre,cod_curso,fecha_inicio,id_profesor)
+insert into modulos (cod_modulo,nombre,id_curso,fecha_inicio,id_profesor)
             values (1,'Bases de Datos',1,to_date('15/09/2018'),1);
 insert into modulos values(2,'Implantacion de Sistemas Operativos',1,to_date('15/09/2018'),3);
 insert into modulos values(3,'Fundamentos Hardware',1,to_date('15/09/2018'),4);
@@ -321,16 +321,16 @@ insert into modulos values(12,'Seguridad y Alta disponibilidad',2,to_date('15/09
 ---------------------------------------------------------------
 create table tareas (
   cod_modulo number(11),
-  cod_curso number(11),
+  id_curso number(11),
   cod_tarea number(11),
   titulo varchar2(40),
   descripcion varchar2(60),
 
-  constraint tareas_Pk PRIMARY KEY (cod_modulo,cod_curso,cod_tarea),
+  constraint tareas_Pk PRIMARY KEY (cod_modulo,id_curso,cod_tarea),
   constraint tareas_Fk foreign key (cod_modulo) references modulos
 );
 
-insert into tareas(cod_modulo,cod_curso, cod_tarea, titulo, descripcion)
+insert into tareas(cod_modulo,id_curso, cod_tarea, titulo, descripcion)
                    VALUES(1,1,1,'BdD Natacion','Crear una serie de tablas para competiciones de natacion');
 insert into tareas values(1,2,1,'Consultas SQL','Conectar con la base de datos Alumnos y realizar los ejercicios');
 insert into tareas values(1,3,1,'Esquema Ent-Rel','Realiza el esquema entidad-relacion de los campeonatos de futbol');
@@ -348,11 +348,11 @@ create table notas(
   id_alumno number(11),
   cod_tarea number(11),
   cod_modulo number(11),
-  cod_curso number(11),
+  id_curso number(11),
   nota number(2,1),
-  constraint notas_pk primary key (id_alumno,cod_tarea,cod_modulo,cod_curso),
+  constraint notas_pk primary key (id_alumno,cod_tarea,cod_modulo,id_curso),
   constraint notas_fk1 foreign key (id_alumno) references alumnos,
-  constraint notas_fk2 foreign key (cod_tarea,cod_modulo) references tareas
+  constraint notas_fk2 foreign key (cod_tarea,cod_modulo,id_curso) references tareas
 );
 
 insert into notas(id_alumno, cod_tarea,cod_modulo,cod_curso, nota)
@@ -446,3 +446,36 @@ insert into notas values(10,3,2,1,4.6);
 insert into notas values(10,1,3,1,5.5);
 insert into notas values(10,2,3,1,5.8);
 insert into notas values(10,3,3,1,8.5);
+                                                      
+                                                      
+--2.4.5 Consultas en MariaDB:
+-- 1
+seleccione  *  desde los horarios donde id_curso = 1 ;
+-- 2
+seleccione  *  desde horarios donde id_curso = 2 ;
+-- 3
+seleccione  t . título , t . descripcion , A . nombre , A . apellido1 , A . apellido2 , n . No un
+de tareas T, alumnos A, notas N
+donde  t . cod_tarea = N . cod_tarea  y  n . id_alumno = A . id_alumno ;
+-- 4
+seleccione  una . nombre , A . apellido1 , A . apellido2 , avg (nota) como Media, cuenta ( * ) como Tareas
+de alumnos A, tareas T, notas N
+donde  A . id_alumno = N . id_alumno  y  t . cod_tarea = N . cod_tarea
+grupo por   A . nombre , A . apellido1 , A . apellido2 ;
+
+-- Creamos las vistas:
+-- 1
+cree la  vista  horario_1  como  seleccione  *  desde los horarios donde id_curso = 1 ;
+-- 2
+cree la  vista  horario_2  como  seleccione  *  desde los horarios donde id_curso = 2 ;
+-- 3
+crear  vista  tareas_notas  como
+seleccione  t . título , t . descripcion , A . nombre , A . apellido1 , A . apellido2 , n . No un
+de tareas T, alumnos A, notas N
+donde  t . cod_tarea = N . cod_tarea  y  n . id_alumno = A . id_alumno ;
+-- 4
+crear  ver  media_notas  como 
+seleccione  una . nombre , A . apellido1 , A . apellido2 , avg (nota) como Media, cuenta ( * ) como Tareas
+de alumnos A, tareas T, notas N
+donde  A . id_alumno = N . id_alumno  y  t . cod_tarea = N . cod_tarea
+grupo por   A . nombre , A . apellido1 , A . apellido2 ;     

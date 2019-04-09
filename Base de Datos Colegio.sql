@@ -355,7 +355,7 @@ create table notas(
   constraint notas_fk2 foreign key (cod_tarea,cod_modulo,id_curso) references tareas
 );
 
-insert into notas(id_alumno, cod_tarea,cod_modulo,cod_curso, nota)
+insert into notas(id_alumno, cod_tarea,cod_modulo,id_curso, nota)
                   VALUES(1,1,1,1,6.7);
 insert into notas values(1,2,1,1,1.7);
 insert into notas values(1,3,1,1,9.2);
@@ -449,33 +449,33 @@ insert into notas values(10,3,3,1,8.5);
                                                       
                                                       
 --2.4.5 Consultas en MariaDB:
--- 1
-seleccione  *  desde los horarios donde id_curso = 1 ;
--- 2
-seleccione  *  desde horarios donde id_curso = 2 ;
--- 3
-seleccione  t . título , t . descripcion , A . nombre , A . apellido1 , A . apellido2 , n . No un
-de tareas T, alumnos A, notas N
-donde  t . cod_tarea = N . cod_tarea  y  n . id_alumno = A . id_alumno ;
--- 4
-seleccione  una . nombre , A . apellido1 , A . apellido2 , avg (nota) como Media, cuenta ( * ) como Tareas
-de alumnos A, tareas T, notas N
-donde  A . id_alumno = N . id_alumno  y  t . cod_tarea = N . cod_tarea
-grupo por   A . nombre , A . apellido1 , A . apellido2 ;
+--1
+select * from horarios where id_curso=1;
+--2
+select * from horarios where id_curso=2;
+--3
+select T.titulo,T.descripcion,A.nombre,A.apellido1,A.apellido2,N.nota
+from tareas T,alumnos A, notas N
+where T.cod_tarea=N.cod_tarea and N.id_alumno=A.id_alumno;
+--4
+select A.nombre,A.apellido1,A.apellido2,avg(nota) as Media,count(*) as Tareas
+from alumnos A, tareas T, notas N
+where A.id_alumno=N.id_alumno and T.cod_tarea=N.cod_tarea
+group by  A.nombre,A.apellido1,A.apellido2;
 
--- Creamos las vistas:
--- 1
-cree la  vista  horario_1  como  seleccione  *  desde los horarios donde id_curso = 1 ;
--- 2
-cree la  vista  horario_2  como  seleccione  *  desde los horarios donde id_curso = 2 ;
--- 3
-crear  vista  tareas_notas  como
-seleccione  t . título , t . descripcion , A . nombre , A . apellido1 , A . apellido2 , n . No un
-de tareas T, alumnos A, notas N
-donde  t . cod_tarea = N . cod_tarea  y  n . id_alumno = A . id_alumno ;
--- 4
-crear  ver  media_notas  como 
-seleccione  una . nombre , A . apellido1 , A . apellido2 , avg (nota) como Media, cuenta ( * ) como Tareas
-de alumnos A, tareas T, notas N
-donde  A . id_alumno = N . id_alumno  y  t . cod_tarea = N . cod_tarea
-grupo por   A . nombre , A . apellido1 , A . apellido2 ;     
+--Creamos las vistas:
+--1
+create view horario_1 as select * from horarios where id_curso=1;
+--2
+create view horario_2 as select * from horarios where id_curso=2;
+--3
+create view tareas_notas as
+select T.titulo,T.descripcion,A.nombre,A.apellido1,A.apellido2,N.nota
+from tareas T,alumnos A, notas N
+where T.cod_tarea=N.cod_tarea and N.id_alumno=A.id_alumno;
+--4
+create view media_notas as 
+select A.nombre,A.apellido1,A.apellido2,avg(nota) as Media,count(*) as Tareas
+from alumnos A, tareas T, notas N
+where A.id_alumno=N.id_alumno and T.cod_tarea=N.cod_tarea
+group by  A.nombre,A.apellido1,A.apellido2;     

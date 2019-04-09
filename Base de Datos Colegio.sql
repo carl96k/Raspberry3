@@ -443,3 +443,10 @@ insert into notas values(10,1.3,2,4.6);
 insert into notas values(10,1.1,3,5.5);
 insert into notas values(10,1.2,3,5.8);
 insert into notas values(10,1.3,3,8.5);
+                               
+--2.4.5 Consultas en MariaDB:
+--1
+select * from horarios where id_curso=1;
+--2
+select * from horarios where id_curso=2;
+--3

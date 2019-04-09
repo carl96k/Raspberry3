@@ -14,9 +14,11 @@ body{
     font-weight: var(--tAnchoNormal);
     color:var(--cLetraDominante);
     background-image: url('../img/fondo1.jpg');
-    background-repeat: repeat;
-    margin-left: 200px;
-    margin-right: 200px;
+    background-size: cover;
+    margin-left: 15em;
+    margin-right: 15em;
+    background-position: left left;
+   text-shadow: 2px 0 0 #000, -2px 0 0 #000, 0 2px 0 #000, 0 -2px 0 #000, 1px 1px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
 
 }
 img{
@@ -48,5 +50,8 @@ h2{
         height:250px; 
 		width:300px;
     }
+}
 
-
+ul {
+  list-style-type:circle;
+}

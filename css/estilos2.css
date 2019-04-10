@@ -9,6 +9,7 @@
 }
 
 body{
+    font-size:16px;
     background-color: var(--cDominante);
     font-family:var(--tLetraDominante) ;
     font-weight: var(--tAnchoNormal);
